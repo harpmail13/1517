@@ -5,25 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DeRM | 1517 Medici Grant Portfolio</title>
     
-    <!-- Import Google's 3D viewer component & Chart.js -->
+    <!-- External Dependencies: 3D Engine & Interactive Charting Engine -->
     <script type="module" src="https://googleapis.com"></script>
     <script src="https://jsdelivr.net"></script>
 
     <style>
-        /* Core Creme & Charcoal Styling */
+        /* Core Creme & Charcoal Palette Configuration */
         body { 
             margin: 0; 
-            background-color: #1E2022; /* Rich Charcoal */
-            color: #F4F1EA; /* Soft Creme */
+            background-color: #1E2022; /* Rich Deep Charcoal background */
+            color: #F4F1EA; /* Cream primary text */
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; 
+            overflow: hidden;
         }
         
         .container { 
             display: flex; 
             height: 100vh; 
+            width: 100vw;
         }
         
-        /* Left Column: Narrative & Data */
+        /* Left Column Structure: Text Context, Graphing, and Documentation */
         .info-panel { 
             width: 40%; 
             padding: 40px; 
@@ -34,25 +36,26 @@
             border-right: 1px solid #2C2E30;
         }
         
-        /* Right Column: Interactive 3D CAD */
+        /* Right Column Structure: Full Viewport 3D Object Space */
         .viewer-panel { 
             width: 60%; 
-            background-color: #161719; /* Deeper Charcoal variant for visual depth */
+            background-color: #161719; /* Contrast charcoal variation */
             position: relative; 
         }
         
         model-viewer { 
             width: 100%; 
             height: 100%; 
+            display: block;
         }
         
-        h1 { font-size: 2.5rem; color: #FDFBF7; margin-bottom: 5px; font-weight: 800; letter-spacing: -0.5px; }
+        h1 { font-size: 2.5rem; color: #FDFBF7; margin-top: 0; margin-bottom: 5px; font-weight: 800; letter-spacing: -0.5px; }
         p { color: #D1CFC9; line-height: 1.6; font-size: 1rem; }
         
-        /* Call to Action Button */
+        /* Action UI Elements */
         .btn { 
-            background: #F4F1EA; /* Creme background */
-            color: #1E2022; /* Charcoal text */
+            background: #F4F1EA; /* Cream interactive accent */
+            color: #1E2022; /* Charcoal interactive text */
             padding: 14px 28px; 
             text-decoration: none; 
             border-radius: 8px; 
@@ -64,56 +67,58 @@
         }
         .btn:hover { opacity: 0.9; }
 
-        /* Document/Screenshot Containers */
+        /* Media Container Framing */
         .screenshot-card {
-            background: #2C2E30; /* Lighter Charcoal Card */
+            background: #2C2E30; 
             border: 1px solid #3A3D40; 
             border-radius: 8px; 
             padding: 20px; 
             text-align: center;
-            margin-top: 20px;
+            margin-top: 30px;
         }
     </style>
 </head>
 <body>
 
     <div class="container">
-        <!-- LEFT COLUMN -->
+        
+        <!-- LEFT NARRATIVE & METRICS PANELS -->
         <div class="info-panel">
             <h1>DeRM</h1>
             <p>A novel, defensible approach to physical hardware integration. Engineered entirely from the ground up.</p>
             
+            <!-- Replace with your actual recorded application link -->
             <a href="YOUR_LOOM_VIDEO_LINK" class="btn">► Watch 5-Min Loom Demo</a>
 
-            <!-- Fund Allocation Text Breakdown -->
-            <div style="margin-top: 20px; font-size: 0.95rem; line-height: 1.6;">
-                <span style="color: #FDFBF7; font-weight: bold; display: block; margin-bottom: 8px;">Strategic Budget Allocation:</span>
-                <div style="margin-bottom: 6px;"><span style="color: #4285f4; font-size: 1.2rem; vertical-align: middle;">■</span> <strong>PPA (6.5%):</strong> Provisional Patent Application to lock down our mechanical layout IP.</div>
-                <div style="margin-bottom: 6px;"><span style="color: #ea4335; font-size: 1.2rem; vertical-align: middle;">■</span> <strong>Prototyping (80.0%):</strong> Machining raw stock, custom PCB fab, and validation runs.</div>
+            <!-- Quantitative Summary Breakdown -->
+            <div style="margin-top: 25px; font-size: 0.95rem; line-height: 1.6;">
+                <span style="color: #FDFBF7; font-weight: bold; display: block; margin-bottom: 10px;">Strategic Budget Allocation:</span>
+                <div style="margin-bottom: 8px;"><span style="color: #4285f4; font-size: 1.2rem; vertical-align: middle;">■</span> <strong>PPA (6.5%):</strong> Provisional Patent Application to lock down our mechanical layout IP.</div>
+                <div style="margin-bottom: 8px;"><span style="color: #ea4335; font-size: 1.2rem; vertical-align: middle;">■</span> <strong>Prototyping (80.0%):</strong> Machining raw stock, custom PCB fab, and validation runs.</div>
                 <div><span style="color: #fbbc05; font-size: 1.2rem; vertical-align: middle;">■</span> <strong>Emergency Expenses (13.5%):</strong> Component buffer & tolerancing adjustments.</div>
             </div>
 
-            <!-- Canvas for Chart.js Pie Chart -->
-            <div style="width: 100%; max-width: 280px; margin: 35px auto 20px auto;">
+            <!-- PIE CHART TARGET CONTAINER (Now explicitly mapped inside the DOM) -->
+            <div style="width: 100%; max-width: 240px; margin: 35px 0 25px 0;">
                 <canvas id="myPieChart"></canvas>
             </div>
 
-            <!-- Background-Removed Google Patents Screenshot Section -->
+            <!-- INTELLECTUAL PROPERTY PROOF ELEMENT -->
             <div class="screenshot-card">
                 <span style="display: block; font-weight: bold; font-size: 1rem; color: #FDFBF7; margin-bottom: 4px; text-align: left;">Prior Art Whitespace</span>
                 <p style="font-size: 0.85rem; color: #BDBBB5; margin-top: 0; margin-bottom: 15px; text-align: left;">
                     A deep structural global query returns zero existing patent matches—confirming our unique technical path.
                 </p>
-                <!-- Screenshot image -->
+                <!-- Target for your background-removed Google Patents snippet file -->
                 <img src="google_patents_no_results.png" 
                      alt="Google Patents Search Result Screenshot" 
                      style="max-width: 100%; height: auto; opacity: 0.9; filter: drop-shadow(0px 4px 10px rgba(0,0,0,0.4));">
             </div>
         </div>
 
-        <!-- RIGHT COLUMN -->
+        <!-- RIGHT 3D COMPUTER-AIDED DESIGN (CAD) INTERACTION ZONE -->
         <div class="viewer-panel">
-            <!-- Loads your exported Onshape .glb model seamlessly -->
+            <!-- Connects to your exported Onshape file located in the exact same workspace directory -->
             <model-viewer 
                 src="drone_prototype.glb" 
                 alt="Interactive 3D model exported from Onshape" 
@@ -122,9 +127,10 @@
                 shadow-intensity="1">
             </model-viewer>
         </div>
+        
     </div>
 
-    <!-- Chart Configuration Script -->
+    <!-- Chart Renders Post-DOM Load to prevent runtime canvas reference breaks -->
     <script>
         const ctx = document.getElementById('myPieChart').getContext('2d');
         new Chart(ctx, {
@@ -145,7 +151,7 @@
                         position: 'bottom',
                         labels: { 
                             color: '#F4F1EA', 
-                            font: { size: 13, family: 'sans-serif' }
+                            font: { size: 12, family: 'sans-serif' }
                         } 
                     }
                 }
