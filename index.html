@@ -5,16 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DeRM | 1517 Medici Grant Portfolio</title>
     
-    <!-- External Dependencies: 3D Engine & Interactive Charting Engine -->
+    <!-- Core Visual Dependencies -->
     <script type="module" src="https://googleapis.com"></script>
     <script src="https://jsdelivr.net"></script>
 
     <style>
-        /* Core Creme & Charcoal Palette Configuration */
+        /* Modern Creme & Charcoal Palette Theme Rules */
         body { 
             margin: 0; 
-            background-color: #1E2022; /* Rich Deep Charcoal background */
-            color: #F4F1EA; /* Cream primary text */
+            background-color: #1E2022; /* Soft deep charcoal background */
+            color: #F4F1EA; /* High-contrast clean cream text */
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; 
             overflow: hidden;
         }
@@ -25,9 +25,9 @@
             width: 100vw;
         }
         
-        /* Left Column Structure: Text Context, Graphing, and Documentation */
+        /* Column Framework layouts */
         .info-panel { 
-            width: 40%; 
+            width: 42%; 
             padding: 40px; 
             box-sizing: border-box; 
             display: flex; 
@@ -36,10 +36,9 @@
             border-right: 1px solid #2C2E30;
         }
         
-        /* Right Column Structure: Full Viewport 3D Object Space */
         .viewer-panel { 
-            width: 60%; 
-            background-color: #161719; /* Contrast charcoal variation */
+            width: 58%; 
+            background-color: #161719; /* Deeper variant for structural CAD backdrop */
             position: relative; 
         }
         
@@ -49,32 +48,39 @@
             display: block;
         }
         
-        h1 { font-size: 2.5rem; color: #FDFBF7; margin-top: 0; margin-bottom: 5px; font-weight: 800; letter-spacing: -0.5px; }
-        p { color: #D1CFC9; line-height: 1.6; font-size: 1rem; }
+        /* Typography System variables */
+        h1 { font-size: 2.8rem; color: #FDFBF7; margin-top: 0; margin-bottom: 5px; font-weight: 800; letter-spacing: -1px; }
+        h2 { font-size: 1.3rem; color: #FDFBF7; margin-top: 30px; margin-bottom: 12px; border-bottom: 1px solid #2C2E30; padding-bottom: 6px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; }
+        p { color: #D1CFC9; line-height: 1.6; font-size: 0.95rem; margin-top: 0; }
+        ul { padding-left: 20px; margin: 10px 0; }
+        li { margin-bottom: 10px; line-height: 1.5; color: #D1CFC9; font-size: 0.9rem; }
+        strong { color: #FDFBF7; }
+        a { color: #4285f4; text-decoration: none; }
+        a:hover { text-decoration: underline; }
         
-        /* Action UI Elements */
+        /* Interactive Buttons */
         .btn { 
-            background: #F4F1EA; /* Cream interactive accent */
-            color: #1E2022; /* Charcoal interactive text */
-            padding: 14px 28px; 
+            background: #F4F1EA; 
+            color: #1E2022; 
+            padding: 12px 24px; 
             text-decoration: none; 
-            border-radius: 8px; 
+            border-radius: 6px; 
             font-weight: bold; 
             width: fit-content; 
-            margin: 20px 0;
+            margin: 15px 0;
             transition: opacity 0.2s ease;
             display: inline-block;
+            font-size: 0.9rem;
         }
-        .btn:hover { opacity: 0.9; }
+        .btn:hover { opacity: 0.9; text-decoration: none; }
 
-        /* Media Container Framing */
         .screenshot-card {
             background: #2C2E30; 
             border: 1px solid #3A3D40; 
             border-radius: 8px; 
             padding: 20px; 
             text-align: center;
-            margin-top: 30px;
+            margin-top: 25px;
         }
     </style>
 </head>
@@ -82,46 +88,60 @@
 
     <div class="container">
         
-        <!-- LEFT NARRATIVE & METRICS PANELS -->
+        <!-- LEFT SCREEN: EXECUTION HISTORY & DATA METRICS -->
         <div class="info-panel">
             <h1>DeRM</h1>
-            <p>A novel, defensible approach to physical hardware integration. Engineered entirely from the ground up.</p>
+            <p style="font-size: 1.05rem; color: #E5E2DA;">Developing a novel magnetless motor utilizing Soft Magnetic Composite (SMC) and polycarbonate materials to bypass rare-earth supply chains and unlock extreme weight efficiencies at half the cost of standard PMRMs.</p>
             
-            <!-- Replace with your actual recorded application link -->
-            <a href="YOUR_LOOM_VIDEO_LINK" class="btn">► Watch 5-Min Loom Demo</a>
+            <!-- Core Submission Action Link -->
+            <a href="https://vimeo.com/828721050" class="btn" target="_blank">► Watch Prototype Build Concept Video</a>
 
-            <!-- Quantitative Summary Breakdown -->
-            <div style="margin-top: 25px; font-size: 0.95rem; line-height: 1.6;">
-                <span style="color: #FDFBF7; font-weight: bold; display: block; margin-bottom: 10px;">Strategic Budget Allocation:</span>
-                <div style="margin-bottom: 8px;"><span style="color: #4285f4; font-size: 1.2rem; vertical-align: middle;">■</span> <strong>PPA (6.5%):</strong> Provisional Patent Application to lock down our mechanical layout IP.</div>
-                <div style="margin-bottom: 8px;"><span style="color: #ea4335; font-size: 1.2rem; vertical-align: middle;">■</span> <strong>Prototyping (80.0%):</strong> Machining raw stock, custom PCB fab, and validation runs.</div>
-                <div><span style="color: #fbbc05; font-size: 1.2rem; vertical-align: middle;">■</span> <strong>Emergency Expenses (13.5%):</strong> Component buffer & tolerancing adjustments.</div>
+            <h2>Past Work & Validation</h2>
+            <ul>
+                <li><strong>Arcade Game for Judd (2023):</strong> Automated, adaptive ball return system for a 5-year-old end user with cerebral palsy. Swept 1st Place for <em>Best Use of 3D Printing</em> globally at Make:able 2023.</li>
+                <li><strong>Arm Attachment for Joshua (2024):</strong> Engineered a lightweight, custom mechanical utility mount using generative design. Won both <em>Best Use of 3D Printing</em> & <em>Best Use of Autodesk Software</em> categories at Make:able 2024.</li>
+                <li><strong>Game Board for Kori (2025):</strong> Developed a custom interactive workspace array marking our core transition from pure structural kinematics into active electronic logic integration.</li>
+                <li><strong>Coordination Architecture for Steven (2026):</strong> Modeled stabilized physical balance arrays in Autodesk Fusion to support motor coordination exercises. Awarded <em>Best Use of Autodesk Software</em> at Make:able 2026.</li>
+            </ul>
+
+            <h2>Grant Fund Breakdown</h2>
+            <p>Calculated framework to funnel maximum liquidity into hardware validation and defensible patent scaling:</p>
+            
+            <div style="font-size: 0.9rem; line-height: 1.5; margin-bottom: 20px;">
+                <div style="margin-bottom: 6px;"><span style="color: #4285f4; font-size: 1.1rem; vertical-align: middle;">■</span> <strong>PPA ($65 / 6.5%):</strong> Provisional Patent Application deployment to lock down spatial layout geometry.</div>
+                <div style="margin-bottom: 6px;"><span style="color: #ea4335; font-size: 1.1rem; vertical-align: middle;">■</span> <strong>Prototyping ($800 / 80.0%):</strong> Machining raw structural stock, purchasing tooling components, and circuit fabrication.</div>
+                <div><span style="color: #fbbc05; font-size: 1.1rem; vertical-align: middle;">■</span> <strong>Emergency Reserves ($135 / 13.5%):</strong> Adaptive mitigation buffer to account for hardware tolerance re-runs.</div>
             </div>
 
-            <!-- PIE CHART TARGET CONTAINER (Now explicitly mapped inside the DOM) -->
-            <div style="width: 100%; max-width: 240px; margin: 35px 0 25px 0;">
+            <!-- DYNAMIC GRAPHING CANVAS -->
+            <div style="width: 100%; max-width: 230px; margin: 20px auto 10px 0;">
                 <canvas id="myPieChart"></canvas>
             </div>
 
-            <!-- INTELLECTUAL PROPERTY PROOF ELEMENT -->
+            <!-- SYSTEM PRIOR ART METRICS CARD -->
             <div class="screenshot-card">
-                <span style="display: block; font-weight: bold; font-size: 1rem; color: #FDFBF7; margin-bottom: 4px; text-align: left;">Prior Art Whitespace</span>
+                <span style="display: block; font-weight: bold; font-size: 1rem; color: #FDFBF7; margin-bottom: 4px; text-align: left;">Prior Art Whitespace Validation</span>
                 <p style="font-size: 0.85rem; color: #BDBBB5; margin-top: 0; margin-bottom: 15px; text-align: left;">
-                    A deep structural global query returns zero existing patent matches—confirming our unique technical path.
+                    A deep structural global index query for <em>"magnetless motor SMC polycarbonate"</em> confirms zero existing patent layout registrations.
                 </p>
-                <!-- Target for your background-removed Google Patents snippet file -->
                 <img src="google_patents_no_results.png" 
                      alt="Google Patents Search Result Screenshot" 
-                     style="max-width: 100%; height: auto; opacity: 0.9; filter: drop-shadow(0px 4px 10px rgba(0,0,0,0.4));">
+                     style="max-width: 100%; height: auto; opacity: 0.9; filter: drop-shadow(0px 4px 10px rgba(0,0,0,0.4)); border-radius: 4px;">
             </div>
+
+            <h2>Application Contact</h2>
+            <p style="font-size: 0.9rem; color: #BDBBB5; margin-top: 5px;">
+                <strong>Developer:</strong> <a href="mailto:harpmail13@gmail.com">harpmail13@gmail.com</a><br>
+                <strong>Source Environment:</strong> <a href="https://cad.onshape.com/documents/95e6968f09795edbbbdc9ad3/w/9de151b9717ab2ce36c061e3/e/300adbd9ef353000d55fc667?renderMode=0" target="_blank">Direct Onshape Project Link</a>
+            </p>
         </div>
 
-        <!-- RIGHT 3D COMPUTER-AIDED DESIGN (CAD) INTERACTION ZONE -->
+        <!-- RIGHT SCREEN: DYNAMIC WEBGL CAD SPACE -->
         <div class="viewer-panel">
-            <!-- Connects to your exported Onshape file located in the exact same workspace directory -->
+            <!-- Ensure your exported Onshape file matching this name sits in your project root directory -->
             <model-viewer 
                 src="drone_prototype.glb" 
-                alt="Interactive 3D model exported from Onshape" 
+                alt="Interactive 3D model of the DeRM engine geometry assembly" 
                 auto-rotate 
                 camera-controls 
                 shadow-intensity="1">
@@ -130,7 +150,7 @@
         
     </div>
 
-    <!-- Chart Renders Post-DOM Load to prevent runtime canvas reference breaks -->
+    <!-- Client-Side Graph Generator Block -->
     <script>
         const ctx = document.getElementById('myPieChart').getContext('2d');
         new Chart(ctx, {
@@ -160,4 +180,3 @@
     </script>
 </body>
 </html>
-
