@@ -1,1 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DeRM | 1517 Medici Grant Portfolio</title>
+    
+    <!-- Import Google's 3D viewer component & Chart.js -->
+    <script type="module" src="https://googleapis.com"></script>
+    <script src="https://jsdelivr.net"></script>
+
+    <style>
+        /* Core Creme & Charcoal Styling */
+        body { 
+            margin: 0; 
+            background-color: #1E2022; /* Rich Charcoal */
+            color: #F4F1EA; /* Soft Creme */
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; 
+        }
+        
+        .container { 
+            display: flex; 
+            height: 100vh; 
+        }
+        
+        /* Left Column: Narrative & Data */
+        .info-panel { 
+            width: 40%; 
+            padding: 40px; 
+            box-sizing: border-box; 
+            display: flex; 
+            flex-direction: column; 
+            overflow-y: auto;
+            border-right: 1px solid #2C2E30;
+        }
+        
+        /* Right Column: Interactive 3D CAD */
+        .viewer-panel { 
+            width: 60%; 
+            background-color: #161719; /* Deeper Charcoal variant for visual depth */
+            position: relative; 
+        }
+        
+        model-viewer { 
+            width: 100%; 
+            height: 100%; 
+        }
+        
+        h1 { font-size: 2.5rem; color: #FDFBF7; margin-bottom: 5px; font-weight: 800; letter-spacing: -0.5px; }
+        p { color: #D1CFC9; line-height: 1.6; font-size: 1rem; }
+        
+        /* Call to Action Button */
+        .btn { 
+            background: #F4F1EA; /* Creme background */
+            color: #1E2022; /* Charcoal text */
+            padding: 14px 28px; 
+            text-decoration: none; 
+            border-radius: 8px; 
+            font-weight: bold; 
+            width: fit-content; 
+            margin: 20px 0;
+            transition: opacity 0.2s ease;
+            display: inline-block;
+        }
+        .btn:hover { opacity: 0.9; }
+
+        /* Document/Screenshot Containers */
+        .screenshot-card {
+            background: #2C2E30; /* Lighter Charcoal Card */
+            border: 1px solid #3A3D40; 
+            border-radius: 8px; 
+            padding: 20px; 
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- LEFT COLUMN -->
+        <div class="info-panel">
+            <h1>DeRM</h1>
+            <p>A novel, defensible approach to physical hardware integration. Engineered entirely from the ground up.</p>
+            
+            <a href="YOUR_LOOM_VIDEO_LINK" class="btn">► Watch 5-Min Loom Demo</a>
+
+            <!-- Fund Allocation Text Breakdown -->
+            <div style="margin-top: 20px; font-size: 0.95rem; line-height: 1.6;">
+                <span style="color: #FDFBF7; font-weight: bold; display: block; margin-bottom: 8px;">Strategic Budget Allocation:</span>
+                <div style="margin-bottom: 6px;"><span style="color: #4285f4; font-size: 1.2rem; vertical-align: middle;">■</span> <strong>PPA (6.5%):</strong> Provisional Patent Application to lock down our mechanical layout IP.</div>
+                <div style="margin-bottom: 6px;"><span style="color: #ea4335; font-size: 1.2rem; vertical-align: middle;">■</span> <strong>Prototyping (80.0%):</strong> Machining raw stock, custom PCB fab, and validation runs.</div>
+                <div><span style="color: #fbbc05; font-size: 1.2rem; vertical-align: middle;">■</span> <strong>Emergency Expenses (13.5%):</strong> Component buffer & tolerancing adjustments.</div>
+            </div>
+
+            <!-- Canvas for Chart.js Pie Chart -->
+            <div style="width: 100%; max-width: 280px; margin: 35px auto 20px auto;">
+                <canvas id="myPieChart"></canvas>
+            </div>
+
+            <!-- Background-Removed Google Patents Screenshot Section -->
+            <div class="screenshot-card">
+                <span style="display: block; font-weight: bold; font-size: 1rem; color: #FDFBF7; margin-bottom: 4px; text-align: left;">Prior Art Whitespace</span>
+                <p style="font-size: 0.85rem; color: #BDBBB5; margin-top: 0; margin-bottom: 15px; text-align: left;">
+                    A deep structural global query returns zero existing patent matches—confirming our unique technical path.
+                </p>
+                <!-- Screenshot image -->
+                <img src="google_patents_no_results.png" 
+                     alt="Google Patents Search Result Screenshot" 
+                     style="max-width: 100%; height: auto; opacity: 0.9; filter: drop-shadow(0px 4px 10px rgba(0,0,0,0.4));">
+            </div>
+        </div>
+
+        <!-- RIGHT COLUMN -->
+        <div class="viewer-panel">
+            <!-- Loads your exported Onshape .glb model seamlessly -->
+            <model-viewer 
+                src="drone_prototype.glb" 
+                alt="Interactive 3D model exported from Onshape" 
+                auto-rotate 
+                camera-controls 
+                shadow-intensity="1">
+            </model-viewer>
+        </div>
+    </div>
+
+    <!-- Chart Configuration Script -->
+    <script>
+        const ctx = document.getElementById('myPieChart').getContext('2d');
+        new Chart(ctx, {
+            type: 'pie',
+            data: {
+                labels: ['PPA', 'Prototyping', 'Emergency Expenses'],
+                datasets: [{
+                    data: [6.5, 80.0, 13.5], 
+                    backgroundColor: ['#4285f4', '#ea4335', '#fbbc05'], 
+                    borderWidth: 0
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: true,
+                plugins: {
+                    legend: { 
+                        position: 'bottom',
+                        labels: { 
+                            color: '#F4F1EA', 
+                            font: { size: 13, family: 'sans-serif' }
+                        } 
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
 
