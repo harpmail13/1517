@@ -1,6 +1,0 @@
-remote_theme: jekyll/minima
-plugins:
-  - jekyll-remote-theme
-
-minima:
-  skin: auto # Automatically matches the user's OS dark/light setting
