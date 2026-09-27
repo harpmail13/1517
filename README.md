@@ -33,5 +33,5 @@ Currently, I'm working on **DeRM**, an innovative magnetless motor design engine
 
 **Info** 
 * **Email** harpmail13@gmail.com
-* **[CAD](https://cad.onshape.com/documents/95e6968f09795edbbbdc9ad3/w/9de151b9717ab2ce36c061e3/e/300adbd9ef353000d55fc667?renderMode=0&uiState=6ab57aed5cb6200f74d73a9d)**(Currently buggy please copy-paste the link into the search bar)
+* **[CAD](https://cad.onshape.com/documents/95e6968f09795edbbbdc9ad3/w/9de151b9717ab2ce36c061e3/e/300adbd9ef353000d55fc667?renderMode=0&uiState=6ab57aed5cb6200f74d73a9d)**
 
