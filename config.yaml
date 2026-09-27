@@ -3,4 +3,4 @@ plugins:
   - jekyll-remote-theme
 
 minima:
-  skin: auto # Automatically matches the user's OS dark/light setting
+  skin: dark # Automatically matches the user's OS dark/light setting
