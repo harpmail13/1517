@@ -1,6 +1,16 @@
----
-layout: default
----
+<style>
+  body {
+    background-color: #0d1117 !important; /* GitHub Dark Background */
+    color: #c9d1d9 !important;            /* Light Text */
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  a { color: #58a6ff !important; }
+  code { background-color: #161b22 !important; padding: 2px 6px; border-radius: 6px; }
+  pre { background-color: #161b22 !important; padding: 16px; border-radius: 6px; }
+</style>
 
 # 1517 Medici Grant Application
 ---
