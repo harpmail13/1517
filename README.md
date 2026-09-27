@@ -42,7 +42,8 @@ Currently, I'm working on **DeRM**, an innovative magnetless motor design engine
   
 * Emergency Funds/Overflow (As a fail-safe in case any of these categories go over budget) ($135)
   
- <img width="399" height="248" alt="image" src="https://github.com/user-attachments/assets/900416db-f052-42b8-b422-019d34cb7698" />
+<img width="399" height="248" alt="image" src="https://github.com/user-attachments/assets/a6814a0f-930b-464e-9284-e78d374f85da" />
+
 
 
 
