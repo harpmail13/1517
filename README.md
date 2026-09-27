@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 # 1517 Medici Grant Application
 ---
 
