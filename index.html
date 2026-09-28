@@ -49,14 +49,14 @@
   a:hover { text-decoration: underline; }
   hr { border: 0; height: 1px; background: #30363d; margin: 32px 0; }
   
-  .chart-container {
-    margin: 24px 0;
-    background-color: #000000;
-    padding: 16px;
-    border-radius: 8px;
-    border: 1px solid #30363d;
-    display: inline-block;
-  }
+  <!-- 1. Add the Chart.js library CDN link directly into your <head> or right before your chart -->
+<script src="https://jsdelivr.net"></script>
+
+<!-- 2. Replace your existing <div class="chart-container"> with this interactive canvas structure -->
+<div class="chart-container" style="margin: 24px 0; background-color: #161b22; padding: 24px; border-radius: 8px; border: 1px solid #30363d; max-width: 450px;">
+  <canvas id="grantChart" width="400" height="250"></canvas>
+</div>
+
 </style>
 
 
@@ -97,7 +97,67 @@
 </ul>
 
 <div class="chart-container">
- <img width="451" height="248" alt="image" src="https://github.com/user-attachments/assets/80fa7ccc-1ff2-46a1-bbfe-279805f0dfa5" />
+ <script>
+  const ctx = document.getElementById('grantChart').getContext('2d');
+  
+  // Set global Chart.js font properties to use Doto natively
+  Chart.defaults.font.family = "'Doto', sans-serif";
+  Chart.defaults.font.size = 13;
+  Chart.defaults.color = '#c9d1d9'; // Matching your mid-gray body text
+
+  new Chart(ctx, {
+    type: 'pie',
+    data: {
+      labels: ['PROTOTYPING', 'EMERGENCY FUNDS', 'PPA'],
+      datasets: [{
+        data:,
+        // 3 Distinct shades of Black & White for maximum contrast
+        backgroundColor: [
+          '#ffffff', // Prototyping (Crisp White)
+          '#8b949e', // Emergency Funds (Mid Gray)
+          '#30363d'  // PPA (Deep Charcoal)
+        ],
+        // Crisp borders that blend seamlessly into your dark-mode container
+        borderColor: '#161b22',
+        borderWidth: 3,
+        hoverOffset: 12
+      }]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: true,
+      plugins: {
+        legend: {
+          position: 'right',
+          labels: {
+            usePointStyle: true,
+            pointStyle: 'rect', // Sharp rectangular indicators look more industrial than circles
+            padding: 20,
+            font: {
+              weight: '700'
+            }
+          }
+        },
+        tooltip: {
+          enabled: true,
+          backgroundColor: '#0d1117', // Terminal dark background for tooltips
+          titleColor: '#ffffff',
+          bodyColor: '#c9d1d9',
+          borderColor: '#58a6ff', // Subtle line highlight on hover focus
+          borderWidth: 1,
+          cornerRadius: 4,
+          displayColors: false, // Hides the color square inside the tooltip box
+          callbacks: {
+            label: function(context) {
+              let value = context.raw || 0;
+              return ' $' + value;
+            }
+          }
+        }
+      }
+    }
+  });
+</script>
 </div>
 
 <hr>
